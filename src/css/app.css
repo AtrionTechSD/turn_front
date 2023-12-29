@@ -1,0 +1,113 @@
+
+@import 'material-icons/iconfont/outlined.css';
+@import './alert.css';
+@import './loader.css';
+@import './confirm.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ifDark :not(.omitDark){
+    @apply bg-white text-gray-800 dark:bg-gray-800 dark:text-gray-50
+}
+
+.ifDarkHover {
+    @apply hover:bg-gray-800 hover:text-gray-50 dark:hover:text-gray-800 dark:hover:bg-gray-50
+}
+.ellipsis{
+    @apply overflow-hidden text-ellipsis whitespace-nowrap w-full
+}
+input.error-input::placeholder{
+    @apply text-red-400   text-sm text-right;
+    
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+input.error-input{
+animation: shake 0.5s ease-in-out 0s 2;
+@apply border-red-400
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(2%); }
+  20% { transform: translateX(0); }
+  30% { transform: translateX(-2%); }
+  40% { transform: translateX(0); }
+  50% { transform: translateX(2%); }
+  60% { transform: translateX(0); }
+  70% { transform: translateX(-2%); }
+  80% { transform: translateX(0); }
+  90% { transform: translateX(2%); }
+  100% { transform: translateX(0); }
+   
+}
+
+.material-icons-outlined {
+    @apply !bg-transparent;
+     
+}
+.link-with-icon:hover .material-icons-outlined{
+   @apply bg-gray-800 text-gray-50 dark:text-gray-800 dark:bg-gray-50
+
+}
+
+
+.open{
+    transition: all;
+    animation: showModal .5s ease-in-out 0s 1;
+}
+ .close{
+    transition: all;
+    animation: hideModal .5s ease-in-out 0s 1;
+}
+
+@keyframes showModal {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes hideModal {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0);
+    }
+}
+
+.slide-enter-active {
+  animation: slide 1s;
+}
+.slide-leave-active {
+  transition: all 1s;
+  opacity: 0;
+}
+
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+   opacity: 1;
+  }
+}
+@keyframes slide {
+ 0% {
+    opacity: 0;
+  }
+  100% {
+   opacity: 1;
+  }
+}
+

@@ -1,26 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="w-full h-full bg-gray-700">
+    <router-view class=" mx-auto w-full max-w-sm md:max-w-full overflow-x-hidden bg-blue-50"></router-view>
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { onBeforeMount, getCurrentInstance } from "vue"
+import { useAuthStore } from "./stores/authStore";
+const instance = getCurrentInstance();
+const app = instance.appContext.app;
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+const authStore = useAuthStore();
+onBeforeMount(() => {
+  app.config.globalProperties.$authStore = authStore;
+})
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

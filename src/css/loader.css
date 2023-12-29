@@ -1,0 +1,18 @@
+
+ 
+
+  .loader{
+    @apply h-screen w-screen flex items-center justify-center bg-opacity-70 bg-black fixed top-0 left-0 bottom-0 right-0 z-[1000] 
+  }
+
+  .loader-container{
+    @apply flex flex-col items-center justify-center
+  }
+
+  .loader-icon{
+    @apply animate-spin h-10 w-10 border-t-2 border-b-2 border-white rounded-full mb-5
+  }
+
+  .loader-text{
+    @apply text-white text-lg
+  }

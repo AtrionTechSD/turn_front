@@ -1,0 +1,175 @@
+
+/* Estilos básicos para las alertas */
+
+
+.alert {
+  @apply z-[1000] rounded-lg px-4 py-2 text-base  select-none border-l-4;
+  @apply fixed text-gray-800  text-sm;
+ 
+}
+
+/* Estilos para diferentes tipos de alertas */
+.alert-success {
+  @apply border-green-400 bg-green-100   hover:border-green-500
+}
+
+.alert-error {
+ @apply border-pink-400 bg-pink-100   hover:border-pink-500
+}
+
+.alert-warning {
+  @apply border-yellow-400 bg-yellow-100   hover:border-yellow-500
+}
+
+.alert-info {
+ @apply border-blue-400 bg-blue-100   hover:border-blue-500
+}
+
+.alert-position-top, .alert-position-bottom{
+  @apply left-1/2 transform translate-x-[-50%]
+}
+
+/* Estilos para diferentes posiciones */
+.alert-position-top {
+  top: 5px;
+}
+
+.alert-position-bottom {
+  bottom: 5px;
+}
+
+/* Estilos para efectos de slide */
+.alert-slide-in-top {
+  animation: slideInFromTop 0.5s forwards;
+}
+
+.alert-slide-out-top {
+  animation: slideOutToTop 0.5s forwards;
+}
+.alert-slide-in-bottom {
+  animation: slideInToBottom 0.5s forwards;
+}
+
+.alert-slide-out-bottom {
+  animation: slideOutToBottom 0.5s forwards;
+}
+
+.alert-slide-in-top-left, 
+.alert-slide-in-bottom-left {
+  animation: slideInFromLeft 0.5s forwards;
+}
+
+.alert-slide-out-top-left 
+.alert-slide-out-bottom-left {
+  animation: slideOutToLeft 0.5s forwards;
+}
+
+.alert-slide-in-top-right, 
+.alert-slide-in-bottom-right {
+  animation: slideInFromRight 0.5s forwards;
+}
+
+.alert-slide-out-top-right, 
+.alert-slide-out-bottom-right {
+  animation: slideOutToRight 0.5s forwards;
+}
+
+/* Estilos para nuevas posiciones */
+.alert-position-top-left {
+  top: 20px;
+  left: 20px;
+  transform: none;
+}
+
+.alert-position-top-right {
+  top: 20px;
+  right: 20px;
+  transform: none;
+}
+
+.alert-position-bottom-left {
+  bottom: 20px;
+  left: 20px;
+  transform: none;
+}
+
+.alert-position-bottom-right {
+  bottom: 20px;
+  right: 20px;
+  transform: none;
+}
+
+/* Keyframes para animaciones */
+@keyframes slideInFromTop {
+  from {
+    transform: translateX(-50%) translateY(-100%);
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+
+@keyframes slideOutToTop {
+  from {
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    transform: translateX(-50%) translateY(-100%);
+  }
+}
+
+@keyframes slideInToBottom {
+  from {
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    transform: translateX(-50%) translateY(-100%);
+  }
+}
+
+@keyframes slideOutToBottom {
+  from {
+    transform: translateX(-50%) translateY(-100%);
+  }
+  to {
+    transform: translateX(-50%) translateY(100%);
+  }
+}
+
+
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+  @keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
