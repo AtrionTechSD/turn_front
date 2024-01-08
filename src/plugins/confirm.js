@@ -3,11 +3,16 @@
 function confirm(message, callback) {
   // Crear los elementos del DOM para la confirmación
   return new Promise((resolve) => {
+    const prevOverlay = document.getElementById("confirmOverlay");
+    if (prevOverlay) {
+      return;
+    }
     const confirmOverlay = document.createElement("div");
     confirmOverlay.id = "confirmOverlay";
 
     const confirmBox = document.createElement("div");
     confirmBox.id = "confirmBox";
+    confirmBox.classList.add("confirm-show");
 
     const confirmMessage = document.createElement("h1");
     confirmMessage.id = "confirmMessage";
@@ -31,20 +36,26 @@ function confirm(message, callback) {
     confirmBox.appendChild(confirmMessage);
     confirmBox.appendChild(confirmButtons);
 
-    confirmOverlay.appendChild(confirmBox);
     document.body.appendChild(confirmOverlay);
+    confirmOverlay.appendChild(confirmBox);
 
     // Eventos de los botones
     yesButton.addEventListener("click", () => {
-      document.body.removeChild(confirmOverlay);
+      closeConfirm();
       const res = callback();
       resolve(res || true);
     });
 
     noButton.addEventListener("click", () => {
-      document.body.removeChild(confirmOverlay);
+      closeConfirm();
       resolve(false);
     });
+    const closeConfirm = () => {
+      confirmBox.classList.replace(`confirm-show`, `confirm-hide`);
+      setTimeout(() => {
+        confirmOverlay.remove();
+      }, 700); // Duración de la animación de salida
+    };
   });
 }
 

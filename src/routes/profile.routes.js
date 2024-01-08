@@ -1,20 +1,21 @@
 const profileRoutes = [
   {
-    path: "/profile/",
+    path: "/admin/profile/",
     name: "profile",
     component: () => import("@/pages/profile/ProfilePage.vue"),
     meta: {
       auth: true,
+      title: "Mi Perfil",
     },
   },
   {
-    path: "/profile/new",
+    path: "/admin/profile/new",
     name: "new_profile",
     component: () => import("@/pages/profile/NewProfilePage.vue"),
     meta: {
       auth: true,
       newProfile: true,
-      meta: { transition: "slide-right" },
+      title: "Actualizar Perfil",
     },
   },
 ];

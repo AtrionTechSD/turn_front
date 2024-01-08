@@ -37,6 +37,10 @@
 .alert-position-bottom {
   bottom: 5px;
 }
+.alert-position-center-middle {
+ left: 50%;
+ top: 50%;
+}
 
 /* Estilos para efectos de slide */
 .alert-slide-in-top {
@@ -73,6 +77,16 @@
 .alert-slide-out-bottom-right {
   animation: slideOutToRight 0.5s forwards;
 }
+.alert-slide-in-center-middle
+ {
+  animation: scaleInToCenter 0.5s forwards;
+}
+
+.alert-slide-out-center-middle
+ {
+  animation: scaleOutFromCenter 0.5s forwards;
+}
+
 
 /* Estilos para nuevas posiciones */
 .alert-position-top-left {
@@ -109,6 +123,23 @@
   }
 }
 
+@keyframes scaleInToCenter {
+  from {
+    transform: scale(0) translateX(-50%) translateY(-50%);
+  }
+  to {
+    transform: scale(1) translateX(-50%) translateY(-50%);
+  }
+}
+
+@keyframes scaleOutFromCenter {
+  from {
+    transform: scale(1) translateX(-50%) translateY(-50%);
+  }
+  to {
+    transform: scale(0) translateX(-50%) translateY(-50%);
+  }
+}
 
 @keyframes slideOutToTop {
   from {

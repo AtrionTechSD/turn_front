@@ -2,17 +2,17 @@
  
 
   .loader{
-    @apply h-screen w-screen flex items-center justify-center bg-opacity-70 bg-black fixed top-0 left-0 bottom-0 right-0 z-[1000] 
+    @apply h-12 w-screen flex items-center justify-start bg-opacity-10 bg-black fixed bottom-0 left-0  z-[1000] 
   }
 
   .loader-container{
-    @apply flex flex-col items-center justify-center
+    @apply flex flex-row space-x-2 p-4 items-center justify-center
   }
 
   .loader-icon{
-    @apply animate-spin h-10 w-10 border-t-2 border-b-2 border-white rounded-full mb-5
+    @apply animate-spin size-4 border-t-2 border-b-2 border-gray-800 dark:border-gray-400 rounded-full
   }
 
   .loader-text{
-    @apply text-white text-lg
+    @apply text-gray-800 dark:text-gray-400 text-sm
   }

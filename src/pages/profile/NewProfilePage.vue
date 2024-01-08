@@ -1,6 +1,6 @@
 <template>
     <div class="w-full h-full flex items-center justify-center">
-        <div class="border text-card-foreground mx-auto w-full max-w-lg p-6 bg-white shadow-lg dark:shadow-gray-50 rounded-xl"
+        <div class="border text-card-foreground mx-auto w-full max-w-lg p-6 bg-white shadow-lg dark:shadow-white rounded-xl"
             data-v0-t="card">
             <h1 class="font-bold text-center mb-4">Actualice su perfil</h1>
             <form @submit.prevent="storeProfile" class="grid grid-cols-1 md:grid-cols-6 gap-x-2 gap-y-4 relative"
@@ -31,7 +31,7 @@
 <script setup>
 
 import { onBeforeMount } from 'vue';
-import { useProfile } from '@/services/profile.service';
+import { useProfile } from '@/services/profileService';
 const { userProfile, getProfile, storeProfile, institutes } = useProfile();
 
 onBeforeMount(async () => {

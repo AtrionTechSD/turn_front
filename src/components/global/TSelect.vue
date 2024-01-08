@@ -15,7 +15,7 @@
             :class="$global.errorValidation[field] ? 'error-input' : ''" @focus="onEnterInput">
 
         <div :class="showList ? 'opacity-1' : 'opacity-0'" @focus="onEnterInput" tabindex="1"
-            class="absolute z-50 shadow-lg border  border-gray-50 rounded-md left-0 w-full text-sm space-y-2 transition-all ease-in-out duration-500 max-h-56 overflow-y-auto">
+            class="absolute z-[200] shadow-lg border  border-white bg-white rounded-md left-0 w-full text-sm space-y-2 transition-all ease-in-out duration-500 max-h-56 overflow-y-auto">
             <template v-if="showList">
                 <div @click="onSelect(item)" class="cursor-pointer  omitDark hover:bg-gray-100 px-1.5 py-1 rounded-md"
                     v-for="item in filter(valueSearch)" :key="item.value">
@@ -24,6 +24,7 @@
             </template>
 
         </div>
+
     </div>
 </template>
 

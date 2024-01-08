@@ -3,13 +3,13 @@ import RegisterPage from "@/pages/auth/RegisterPage.vue";
 
 const authRoutes = [
   {
-    path: "/auth/login",
+    path: "/admin/auth/login",
     name: "login",
     component: LoginPage,
     meta: { transition: "slide-right" },
   },
   {
-    path: "/auth/register",
+    path: "/admin/auth/register",
     name: "register",
     component: RegisterPage,
     meta: { transition: "slide-right" },

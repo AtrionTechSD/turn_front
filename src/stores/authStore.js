@@ -1,12 +1,10 @@
+import utils from "@/plugins/utils";
 import Cookies from "js-cookie";
 import { defineStore } from "pinia";
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
-    user:
-      Cookies.get("turnUser") != null
-        ? JSON.parse(Cookies.get("turnUser"))
-        : {},
+    user: Cookies.get("turnUser") ? JSON.parse(Cookies.get("turnUser")) : {},
 
     token: Cookies.get("turnToken"),
   }),
@@ -16,12 +14,12 @@ export const useAuthStore = defineStore("auth", {
   }),
   actions: {
     setUser(user) {
-      Cookies.set("turnUser", JSON.stringify(user));
+      utils.setCookies("turnUser", JSON.stringify(user));
       this.user = user;
     },
 
     setToken(token) {
-      Cookies.set("turnToken", JSON.stringify(token));
+      utils.setCookies("turnToken", JSON.stringify(token));
       this.token = token;
     },
   },

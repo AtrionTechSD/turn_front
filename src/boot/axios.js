@@ -17,16 +17,19 @@ api.defaults.withCredentials = true;
 api.interceptors.request.use((req) => {
   const globalStore = useGlobalStore();
   globalStore.setErrorValidation({});
+  globalStore.setLoading(true);
   loader.showLoad("Espere, por favor");
   return req;
 });
 
 api.interceptors.response.use(
-  (res) => {
+  async (res) => {
     loader.stopLoad();
     if (!res.request.responseURL.includes("refreshtoken")) {
-      api.post("auth/refreshtoken");
+      await api.post("auth/refreshtoken");
     }
+    const globalStore = useGlobalStore();
+    globalStore.setLoading(false);
     return res;
   },
   (error) => {

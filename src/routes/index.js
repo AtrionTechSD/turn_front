@@ -1,4 +1,5 @@
 import { createWebHistory, createRouter } from "vue-router";
+import { ElLoading } from "element-plus";
 
 import appRoutes from "./app.routes";
 import Cookies from "js-cookie";
@@ -26,15 +27,15 @@ router.beforeEach((to, from, next) => {
   const isAuth = auth();
   const isProfile = hasProfile();
   if (isAuth && to.fullPath.includes("auth")) {
-    next("/");
+    next("/admin/");
     return;
   }
   if (!isAuth && to.meta.auth) {
-    next("/auth/login");
+    next("/admin/auth/login");
     return;
   }
   if (isAuth && !isProfile && !to.meta.newProfile) {
-    next("/profile/new");
+    next("/admin/profile/new");
     return;
   }
   next();

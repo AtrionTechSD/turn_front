@@ -1,7 +1,5 @@
 <template>
-  <div class="w-full h-full bg-gray-700">
-    <router-view class=" mx-auto w-full max-w-sm md:max-w-full overflow-x-hidden bg-blue-50"></router-view>
-  </div>
+  <router-view class=" overflow-hidden bg-white dark:bg-gray-800 dark:text-gray-300 h-dvh "></router-view>
 </template>
 
 <script setup>
